@@ -16,10 +16,10 @@ public class SpawnMob {
 
     public void createMob(Location location, int level, String name, double maxHP, EntityType entityType) {
         LivingEntity customEntity = (LivingEntity) Bukkit.getWorld(location.getWorld().getName()).spawnEntity(location, entityType);
-        customEntity.setCustomName(""+ChatColor.GRAY+"Lv"+level+" "+name+" "+ ChatColor.YELLOW+customEntity.getHealth()+ChatColor.GREEN+"/"+maxHP+" "+ChatColor.RED+"\u2665");
         customEntity.setCustomNameVisible(true);
         customEntity.setMaxHealth(maxHP);
         customEntity.setHealth(maxHP);
+        customEntity.setCustomName(""+ChatColor.GRAY+"Lv"+level+" "+name+" "+ ChatColor.YELLOW+customEntity.getHealth()+ChatColor.GREEN+"/"+maxHP+" "+ChatColor.RED+"\u2665");
         customEntity.setRemoveWhenFarAway(false);
     }
 
