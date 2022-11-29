@@ -1,0 +1,7 @@
+name: CustomNameTag
+version: 1.19
+main: me.maximde.customnametag.Main
+author: MaximDe
+
+commands:
+   spawnmob:
