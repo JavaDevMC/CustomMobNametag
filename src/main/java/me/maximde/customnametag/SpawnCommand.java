@@ -17,10 +17,15 @@ public class SpawnCommand implements CommandExecutor {
         if(args.length <= 3) {
             player.sendMessage(ChatColor.GREEN+"/spawnmob <level> <name> <maxHP> <mobType>");
         } else {
-            new SpawnMob().createMob(player.getLocation(), Integer.parseInt(args[0]), args[1], Integer.parseInt(args[2]), EntityType.fromName(args[3]));
+            spawnMob(player, arg1, arg2, args);
             player.sendMessage(ChatColor.GREEN+"Mob spawned");
         }
         return false;
+    }
+
+    public void spawnMob(Player sender, Command arg1, String arg2, String[] args) {
+        CustomMob mob = new CustomMob(Integer.parseInt(args[0]), args[1], Integer.parseInt(args[2]), EntityType.fromName(args[3]));
+        mob.spawnMob(sender.getLocation());
     }
 }
 
